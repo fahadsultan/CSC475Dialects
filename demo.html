@@ -1,0 +1,69 @@
+<body>
+    <center>
+    <h1> Classifying Speech Data</h1>
+    <button id="start_record">Start Recording</button> <button id="stop_record">Stop Recording</button> <br/><br/><br/>
+
+    <audio id="player" controls></audio> <br/><br/><br/>
+
+    <button id="start_play">Start Playing</button>    <button id="stop_play">Stop Playing</button> <br/><br/><br/>
+    
+    <a id="download">Download Recording</a><br/>
+    </center>
+</body>
+<script>
+
+    const player = document.getElementById('player');
+
+    const start_play_btn    = document.getElementById('start_play');
+    const stop_play_btn     = document.getElementById('stop_play');
+
+    const start_record_btn  = document.getElementById('start_record');
+    const stop_record_btn   = document.getElementById('stop_record');
+
+    const download_btn = document.getElementById('download');
+
+    const handleSuccess = function(stream) {
+        const options = {mimeType: 'audio/webm'};
+        const recordedChunks = [];
+        const mediaRecorder = new MediaRecorder(stream, options);
+
+        mediaRecorder.addEventListener('dataavailable', function(e) {
+            if (e.data.size > 0) recordedChunks.push(e.data);
+        });
+
+        mediaRecorder.addEventListener('stop', function() {
+
+            download_btn.href = URL.createObjectURL(new Blob(recordedChunks));
+            download_btn.download = 'acetest.wav';
+            
+            player.src = URL.createObjectURL(new Blob(recordedChunks));
+
+            // Stop recording
+            stream.getTracks().forEach(track => track.stop());
+            
+        });
+
+        stop_record_btn.addEventListener('click', function() {
+            mediaRecorder.stop();
+        });
+
+        mediaRecorder.start();
+    };
+
+    start_record.addEventListener('click', function() {
+
+        navigator.mediaDevices
+            .getUserMedia({audio: true, video: false})
+            .then(handleSuccess);
+    });
+
+    start_play_btn.addEventListener('click', function() {
+        player.play();
+    });
+
+    stop_play_btn.addEventListener('click', function() {
+        player.pause();
+    });
+
+
+</script>
