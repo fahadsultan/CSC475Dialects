@@ -1,0 +1,162 @@
+
+.floating-panel {
+  position: fixed;
+  /* right: 10%;  */
+  /* top: 40%; */
+  /* bottom: 2%; */
+  top: 50%;
+  /* left: 15%; */
+  /* transform: translateY(-50%); */
+  width: 100%;
+  height: 50%;
+  background-color: #f1f1f1;
+  padding: 10px;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1;
+  /* allow scroll */
+  overflow: auto;
+} 
+
+my_dataviz {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  width: 242px;
+  height: 700px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+} 
+
+.floating-panel-2 {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 242px;
+  height: 700px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+} 
+
+.title-panel {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -35%);
+  width: 100%;
+  height: 50px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  
+}
+
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+#map {
+  height: 100%;
+}
+
+/* 
+ * Optional: Makes the sample page fill the window. 
+ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+video {
+  float: right;
+  width: 30%;
+}
+
+/* Styles for html table */
+table {
+  float: left;
+  /* align to center */
+  /* margin-left: auto;
+  margin-right: auto; */
+  border-collapse: collapse;
+  width: 20%;
+  font-size: 15px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+/* tr:nth-child(even) {background-color: #f2f2f2;} */
+
+th {
+  background-color: #4CAF50;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 2% auto; /* 15% from the top and centered */
+  padding: 10px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  height: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+button { 
+  /* background-color: #4CAF50; */
+  color: blue;
+  text-decoration: underline;
+  color: blue;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+
+}
+
+video {
+  border: #4CAF50;
+  border-width: 2px;
+}
